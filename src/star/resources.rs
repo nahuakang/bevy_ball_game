@@ -1,7 +1,4 @@
-use bevy::{
-    prelude::Resource,
-    time::{Timer, TimerMode},
-};
+use bevy::prelude::*;
 
 pub const STAR_SPAWN_TIME: f32 = 1.0;
 

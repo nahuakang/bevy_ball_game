@@ -1,16 +1,13 @@
 use bevy::{prelude::*, window::PrimaryWindow};
 
 use crate::{
-    enemy::{Enemy, ENEMY_SIZE},
+    enemy::{components::Enemy, ENEMY_SIZE},
     events::GameOver,
-    score::Score,
-    star::{Star, STAR_SIZE},
+    score::resources::Score,
+    star::{components::Star, STAR_SIZE},
 };
 
-use super::Player;
-
-pub const PLAYER_SPEED: f32 = 500.0;
-pub const PLAYER_SIZE: f32 = 64.0; // Sprite size
+use super::{components::Player, PLAYER_SIZE, PLAYER_SPEED};
 
 pub fn spawn_player(
     mut commands: Commands,

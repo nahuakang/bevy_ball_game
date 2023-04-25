@@ -1,8 +1,8 @@
-use bevy::prelude::{DetectChanges, EventReader, Res, ResMut};
+use bevy::prelude::*;
 
 use crate::events::GameOver;
 
-use super::{HighScores, Score};
+use super::resources::{HighScores, Score};
 
 pub fn update_score(score: Res<Score>) {
     if score.is_changed() {

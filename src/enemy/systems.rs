@@ -1,11 +1,9 @@
 use bevy::{prelude::*, window::PrimaryWindow};
 use rand::prelude::*;
 
-use super::{components::Enemy, EnemySpawnTimer};
-
-pub const ENEMY_SPEED: f32 = 200.0;
-pub const ENEMY_SIZE: f32 = 64.0; // Sprite size
-pub const NUMBER_OF_ENEMIES: usize = 4;
+use super::{
+    components::Enemy, resources::EnemySpawnTimer, ENEMY_SIZE, ENEMY_SPEED, NUMBER_OF_ENEMIES,
+};
 
 pub fn spawn_enemies(
     mut commands: Commands,
