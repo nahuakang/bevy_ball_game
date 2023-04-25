@@ -1,14 +1,23 @@
-mod events;
-mod resources;
+pub mod enemy;
+pub mod events;
+pub mod player;
+pub mod score;
+pub mod star;
+
 mod systems;
 
-pub mod components;
-
-use events::*;
-use resources::*;
-use systems::*;
-
 use bevy::prelude::*;
+use enemy::{
+    confine_enemy_movement, enemy_movement, spawn_enemies, spawn_enemies_over_time,
+    tick_enemy_spawn_timer, update_enemy_direction, EnemySpawnTimer,
+};
+use events::*;
+use player::{
+    confine_player_movement, enemy_hit_player, player_hit_star, player_movement, spawn_player,
+};
+use score::{high_scores_updated, update_high_scores, update_score, HighScores, Score};
+use star::{spawn_stars, spawn_stars_over_time, tick_star_spawn_timer, StarSpawnTimer};
+use systems::*;
 
 fn main() {
     App::new()
